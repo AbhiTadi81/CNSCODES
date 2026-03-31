@@ -46,7 +46,11 @@ public class RSA {
         return e;
     }
 }
+Enter a prime number p: 11
+Enter another prime number q: 13
 
+Public Key (e, n): (7, 143)
+Private Key (d, n): (103, 143)
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
 2.RINJEDEAL ALGORITHM
@@ -102,6 +106,9 @@ public class AESExample {
         System.out.println("Decrypted text: " + originalText);
     }
 }
+Enter your message: hello
+Encrypted text: 5f4dcc3b5aa765d61d8327deb882cf99
+Decrypted text: hello
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 3.SHA-1
@@ -155,6 +162,15 @@ public class SHA1Example {
         return buf.toString();
     }
 }
+Message Digest Info:
+Algorithm = SHA-1
+Provider = SUN version 1.8
+
+SHA1("") = DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
+
+SHA1("abc") = A9993E364706816ABA3E25717850C26C9CD0D89D
+
+SHA1("abcdefghijklmnopqrstuvwxyz") = 32D10C7B8CF96570CA04CE37F2A19D84240D3A89
 ---------------------------------------------------------------------
 import java.math.BigInteger;
 
