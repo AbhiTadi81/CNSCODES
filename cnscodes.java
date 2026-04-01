@@ -33,7 +33,7 @@ public class RSA {
         System.out.println("Private Key (d, n): (" + d + ", " + n + ")");
     }
 
-    public static BigInteger generateE(BigInteger phi) {X
+    public static BigInteger generateE(BigInteger phi) {
         Random rand = new Random();
         BigInteger e;
 
