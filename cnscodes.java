@@ -1,4 +1,4 @@
-1.RSA ALGORITHM
+ 1.RSA ALGORITHM
 import java.math.BigInteger;
 import java.util.Random;
 import java.util.Scanner;
@@ -205,3 +205,41 @@ Alice Public Key (Ya): 34
 Bob Public Key (Yb): 4
 Secret Key (Alice): 9
 Secret Key (Bob): 9
+
+
+
+
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Scanner;
+import java.util.Base64;
+
+public class AES_Final {
+
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+
+        String key = "1234567890123456";
+
+        SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
+
+        System.out.print("Enter the string: ");
+        String text = sc.nextLine();
+
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+
+        byte[] encryptedBytes = cipher.doFinal(text.getBytes());
+        String encrypted = Base64.getEncoder().encodeToString(encryptedBytes);
+
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encrypted));
+        String decrypted = new String(decryptedBytes);
+
+        System.out.println("\nString to encrypt: " + text);
+        System.out.println("Encrypted value: " + encrypted);
+        System.out.println("Decrypted value: " + decrypted);
+    }
+}
